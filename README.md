@@ -38,3 +38,7 @@ on the core code that the PDF Viewer App uses.
 Website: [http://www.vfr.org/](http://www.vfr.org/)
 
 Email: joklamcak(at)gmail(dot)com
+
+### License
+
+This code has been made available under the MIT License.
