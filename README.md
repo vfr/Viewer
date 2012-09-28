@@ -42,7 +42,7 @@ Email: joklamcak(at)gmail(dot)com
 If you find this code useful, or wish to fund further development,
 you can use PayPal to donate to the vfr-Viewer project:
 
-<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=GJ62XRLZB3MCQ&lc=US&item_name=vfr-Viewer&no_note=1&currency_code=USD"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif"/></a>
+<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=joklamcak@gmail.com&lc=US&item_name=vfr-Viewer&no_note=1&currency_code=USD"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif"/></a>
 
 ### License
 
