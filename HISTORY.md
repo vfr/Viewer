@@ -1,7 +1,7 @@
 
 ## History
 
-2012-10-05: Version 2.6.1
+2012-10-05: Version 1.0.1
 
 	- Pulled in PDF Reader Core for iOS v2.6.1 code.
 
