@@ -6,7 +6,7 @@
 This iOS PDF viewer app is based on the open source iOS PDF reader
 code from the https://github.com/vfr/Reader repository on GitHub.
 
-![PDF Viewer App iPod Screenshot](http://i.imgur.com/ZUH8h.png)
+![PDF Viewer App iPod Screenshot](http://i.imgur.com/S1ji4.png)
 
 ### Features
 

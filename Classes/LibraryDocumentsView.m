@@ -1,6 +1,6 @@
 //
 //	LibraryDocumentsView.m
-//	Viewer v1.0.0
+//	Viewer v1.0.1
 //
 //	Created by Julius Oklamcak on 2012-09-01.
 //	Copyright © 2011-2012 Julius Oklamcak. All rights reserved.
@@ -387,7 +387,7 @@
 
 		NSURL *fileURL = document.fileURL; NSString *guid = document.guid; NSString *phrase = document.password; // Document
 
-		ReaderThumbRequest *thumbRequest = [ReaderThumbRequest forView:thumbCell fileURL:fileURL password:phrase guid:guid page:1 size:size];
+		ReaderThumbRequest *thumbRequest = [ReaderThumbRequest newForView:thumbCell fileURL:fileURL password:phrase guid:guid page:1 size:size];
 
 		UIImage *image = [[ReaderThumbCache sharedInstance] thumbRequest:thumbRequest priority:NO]; // Request the thumbnail
 
