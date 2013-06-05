@@ -6,8 +6,6 @@
 This iOS PDF viewer app is based on the open source iOS PDF reader
 code from the https://github.com/vfr/Reader repository on GitHub.
 
-![PDF Viewer App iPod Screenshot](http://i.imgur.com/S1ji4.png)
-
 ### Features
 
  - Universal: runs on iPad, iPhone and iPod touch.
@@ -26,8 +24,8 @@ code from the https://github.com/vfr/Reader repository on GitHub.
 
 ### Notes
 
-Current development and testing of the PDF Viewer App is under Xcode 4.5,
-LLVM 4.1, iOS 5 and iOS 6. The code uses ARC memory management and should
+Current development and testing of the PDF Viewer App is under Xcode 4.6.2,
+LLVM 4.2, iOS 5 and iOS 6. The code uses ARC memory management and should
 work under iOS 4 as well.
 
 Please see https://github.com/vfr/Reader/blob/master/README.md for notes
@@ -47,3 +45,16 @@ you can use PayPal to donate to the vfr-Viewer project:
 ### License
 
 This code has been made available under the MIT License.
+
+### Screen Captures
+
+![Viewer-Screen_LD_1.png](http://i.imgur.com/Kgg2CsJ.png)
+![Viewer-Screen_LD_2.png](http://i.imgur.com/093sqKG.jpg)
+![Viewer-Screen_LD_3.png](http://i.imgur.com/l7s2M32.png)
+![Viewer-Screen_LD_4.png](http://i.imgur.com/s1UA5x2.png)
+![Viewer-Screen_LD_5.png](http://i.imgur.com/1M4UlbI.jpg)
+![Viewer-Screen_SD_1.png](http://i.imgur.com/5ToUoDD.png)
+![Viewer-Screen_SD_2.png](http://i.imgur.com/J7PhSki.jpg)
+![Viewer-Screen_SD_3.png](http://i.imgur.com/4wz17F6.png)
+![Viewer-Screen_SD_4.png](http://i.imgur.com/kge0hLZ.png)
+![Viewer-Screen_SD_5.png](http://i.imgur.com/OmVWsEQ.jpg)

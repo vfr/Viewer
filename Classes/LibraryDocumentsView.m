@@ -1,9 +1,9 @@
 //
 //	LibraryDocumentsView.m
-//	Viewer v1.0.1
+//	Viewer v1.0.2
 //
 //	Created by Julius Oklamcak on 2012-09-01.
-//	Copyright © 2011-2012 Julius Oklamcak. All rights reserved.
+//	Copyright © 2011-2013 Julius Oklamcak. All rights reserved.
 //
 //	Permission is hereby granted, free of charge, to any person obtaining a copy
 //	of this software and associated documentation files (the "Software"), to deal
@@ -198,6 +198,7 @@
 		[theFolderButton addTarget:self action:@selector(folderButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
 		theFolderButton.autoresizingMask = UIViewAutoresizingNone;
 		theFolderButton.showsTouchWhenHighlighted = YES;
+		theFolderButton.exclusiveTouch = YES;
 		theFolderButton.hidden = YES;
 
 		[theToolbar addSubview:theFolderButton]; // Add to toolbar
@@ -213,6 +214,7 @@
 		[theCheckButton addTarget:self action:@selector(checkButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
 		theCheckButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
 		theCheckButton.showsTouchWhenHighlighted = YES;
+		theCheckButton.exclusiveTouch = YES;
 
 		[theToolbar addSubview:theCheckButton]; // Add to toolbar
 
@@ -227,6 +229,7 @@
 		[theMinusButton addTarget:self action:@selector(minusButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
 		theMinusButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
 		theMinusButton.showsTouchWhenHighlighted = YES;
+		theMinusButton.exclusiveTouch = YES;
 		theMinusButton.hidden = YES;
 
 		[theToolbar addSubview:theMinusButton]; // Add to toolbar
@@ -242,6 +245,7 @@
 		[theEditButton addTarget:self action:@selector(editButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
 		theEditButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
 		theEditButton.showsTouchWhenHighlighted = YES;
+		theEditButton.exclusiveTouch = YES;
 		theEditButton.hidden = YES;
 
 		[theToolbar addSubview:theEditButton]; // Add to toolbar

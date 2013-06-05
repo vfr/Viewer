@@ -1,9 +1,9 @@
 //
 //	HelpViewController.m
-//	Viewer v1.0.0
+//	Viewer v1.0.2
 //
 //	Created by Julius Oklamcak on 2012-09-01.
-//	Copyright © 2011-2012 Julius Oklamcak. All rights reserved.
+//	Copyright © 2011-2013 Julius Oklamcak. All rights reserved.
 //
 //	Permission is hereby granted, free of charge, to any person obtaining a copy
 //	of this software and associated documentation files (the "Software"), to deal
@@ -116,6 +116,7 @@
 		[closeButton setBackgroundImage:buttonN forState:UIControlStateNormal];
 		closeButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
 		closeButton.titleLabel.font = [UIFont systemFontOfSize:14.0f];
+		closeButton.exclusiveTouch = YES;
 
 		[theToolbar addSubview:closeButton]; // Add to toolbar
 	}
