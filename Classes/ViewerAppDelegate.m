@@ -1,6 +1,6 @@
 //
 //	ViewerAppDelegate.m
-//	Viewer v1.0.0
+//	Viewer v1.1.0
 //
 //	Created by Julius Oklamcak on 2012-09-01.
 //	Copyright © 2011-2013 Julius Oklamcak. All rights reserved.
@@ -117,7 +117,7 @@
 
 	mainWindow = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds]; // Main application window
 
-	mainWindow.backgroundColor = [UIColor scrollViewTexturedBackgroundColor]; // Window background color
+	mainWindow.backgroundColor = [UIColor grayColor]; // Neutral gray window background color
 
 	rootViewController = [[LibraryViewController alloc] initWithNibName:nil bundle:nil]; // Root
 

@@ -53,6 +53,9 @@
 		459A799C13413941009639D8 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459A799B13413941009639D8 /* ImageIO.framework */; };
 		459D1AD7144CD72600EF4614 /* help.css in Resources */ = {isa = PBXBuildFile; fileRef = 459D1AD9144CD72600EF4614 /* help.css */; };
 		45B9423613413C99005AE6DA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 45B9423513413C99005AE6DA /* Localizable.strings */; };
+		45D9DE8E17FDF0B300581962 /* AppIcon-076.png in Resources */ = {isa = PBXBuildFile; fileRef = 45D9DE8B17FDF0B300581962 /* AppIcon-076.png */; };
+		45D9DE8F17FDF0B300581962 /* AppIcon-120.png in Resources */ = {isa = PBXBuildFile; fileRef = 45D9DE8C17FDF0B300581962 /* AppIcon-120.png */; };
+		45D9DE9017FDF0B300581962 /* AppIcon-152.png in Resources */ = {isa = PBXBuildFile; fileRef = 45D9DE8D17FDF0B300581962 /* AppIcon-152.png */; };
 		45E2B4E9144CB3A500B497D0 /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45E2B4E8144CB3A500B497D0 /* HelpViewController.m */; };
 		45E2B4EC144CC68E00B497D0 /* help.html in Resources */ = {isa = PBXBuildFile; fileRef = 45E2B4EE144CC68E00B497D0 /* help.html */; };
 		45EC70F8134B7B5600862B6D /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45EC70F7134B7B5600862B6D /* MessageUI.framework */; };
@@ -173,6 +176,9 @@
 		459A799B13413941009639D8 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		459D1AD8144CD72600EF4614 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.css; name = en; path = en.lproj/help.css; sourceTree = "<group>"; };
 		45B9423313413C7A005AE6DA /* en */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = en; path = Resources/en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		45D9DE8B17FDF0B300581962 /* AppIcon-076.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "AppIcon-076.png"; path = "Graphics/AppIcon-076.png"; sourceTree = "<group>"; };
+		45D9DE8C17FDF0B300581962 /* AppIcon-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "AppIcon-120.png"; path = "Graphics/AppIcon-120.png"; sourceTree = "<group>"; };
+		45D9DE8D17FDF0B300581962 /* AppIcon-152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "AppIcon-152.png"; path = "Graphics/AppIcon-152.png"; sourceTree = "<group>"; };
 		45E2B4E7144CB3A500B497D0 /* HelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpViewController.h; sourceTree = "<group>"; };
 		45E2B4E8144CB3A500B497D0 /* HelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpViewController.m; sourceTree = "<group>"; };
 		45E2B4ED144CC68E00B497D0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = en; path = en.lproj/help.html; sourceTree = "<group>"; };
@@ -269,7 +275,7 @@
 				451258EB142B8852009BCAF5 /* Support Code */,
 				4584F5CA13422D8E00C05614 /* Reader Sources */,
 				451A5597142A642E009E41F9 /* Reader Support */,
-				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97315FDCFA39411CA2CEA /* Support Files */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				45B9424113413D4D005AE6DA /* Graphics */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
@@ -279,13 +285,14 @@
 			sourceTree = "<group>";
 			wrapsLines = 0;
 		};
-		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+		29B97315FDCFA39411CA2CEA /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
+				8D1107310486CEB800E47090 /* Viewer-Info.plist */,
 				32CA4F630368D1EE00C91783 /* Viewer-Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 			);
-			name = "Other Sources";
+			name = "Support Files";
 			sourceTree = "<group>";
 		};
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
@@ -294,7 +301,6 @@
 				452E1F8F161203E600192ED2 /* README.md */,
 				452E1F91161203EE00192ED2 /* HISTORY.md */,
 				452E1F92161203EE00192ED2 /* LICENSE.md */,
-				8D1107310486CEB800E47090 /* Viewer-Info.plist */,
 				45B9423513413C99005AE6DA /* Localizable.strings */,
 				28193054112F811F00ECF9B4 /* Reader.xcdatamodeld */,
 				4552C17413413EB00000C190 /* Settings.bundle */,
@@ -376,14 +382,9 @@
 			name = Reader;
 			sourceTree = "<group>";
 		};
-		456E76E914C0B6B60083D18E /* Icons */ = {
+		456E76E914C0B6B60083D18E /* Viewer */ = {
 			isa = PBXGroup;
 			children = (
-				45F6242F1444B09F006B6B11 /* AppIcon-057.png */,
-				45F624301444B09F006B6B11 /* AppIcon-072.png */,
-				45F624311444B09F006B6B11 /* AppIcon-114.png */,
-				45449EB115153810009E47C2 /* AppIcon-144.png */,
-				45F624321444B09F006B6B11 /* AppIcon-PDF.png */,
 				45F624331444B09F006B6B11 /* Folder-Large.png */,
 				45F624341444B09F006B6B11 /* Folder-Large@2x.png */,
 				45F624351444B09F006B6B11 /* Folder-Small.png */,
@@ -403,7 +404,7 @@
 				45F624431444B09F006B6B11 /* Icon-Plus.png */,
 				45F624441444B09F006B6B11 /* Icon-Plus@2x.png */,
 			);
-			name = Icons;
+			name = Viewer;
 			sourceTree = "<group>";
 		};
 		4584F5C913422D6C00C05614 /* Core Data */ = {
@@ -446,6 +447,22 @@
 			name = "Reader Sources";
 			sourceTree = "<group>";
 		};
+		458B3E5617FDED380055415E /* App */ = {
+			isa = PBXGroup;
+			children = (
+				45F6242F1444B09F006B6B11 /* AppIcon-057.png */,
+				45F624301444B09F006B6B11 /* AppIcon-072.png */,
+				45D9DE8B17FDF0B300581962 /* AppIcon-076.png */,
+				45F624311444B09F006B6B11 /* AppIcon-114.png */,
+				45D9DE8C17FDF0B300581962 /* AppIcon-120.png */,
+				45449EB115153810009E47C2 /* AppIcon-144.png */,
+				45D9DE8D17FDF0B300581962 /* AppIcon-152.png */,
+				45F624321444B09F006B6B11 /* AppIcon-PDF.png */,
+				452E1F8C161203A200192ED2 /* Default-568h@2x.png */,
+			);
+			name = App;
+			sourceTree = "<group>";
+		};
 		459D1AD4144CD66D00EF4614 /* Help */ = {
 			isa = PBXGroup;
 			children = (
@@ -458,9 +475,9 @@
 		45B9424113413D4D005AE6DA /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
-				456E76E914C0B6B60083D18E /* Icons */,
+				458B3E5617FDED380055415E /* App */,
+				456E76E914C0B6B60083D18E /* Viewer */,
 				456E76E714C0B6940083D18E /* Reader */,
-				452E1F8C161203A200192ED2 /* Default-568h@2x.png */,
 			);
 			name = Graphics;
 			sourceTree = "<group>";
@@ -491,7 +508,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0500;
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Viewer" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -534,6 +551,7 @@
 				45F6245F1444B09F006B6B11 /* Icon-Cross.png in Resources */,
 				45F624601444B09F006B6B11 /* Icon-Cross@2x.png in Resources */,
 				45F624611444B09F006B6B11 /* Icon-Edit.png in Resources */,
+				45D9DE9017FDF0B300581962 /* AppIcon-152.png in Resources */,
 				45F624621444B09F006B6B11 /* Icon-Edit@2x.png in Resources */,
 				45F624631444B09F006B6B11 /* Icon-Folder.png in Resources */,
 				45F624641444B09F006B6B11 /* Icon-Folder@2x.png in Resources */,
@@ -549,10 +567,12 @@
 				45F6246E1444B09F006B6B11 /* Reader-Email@2x.png in Resources */,
 				45F6246F1444B09F006B6B11 /* Reader-Mark-N.png in Resources */,
 				45F624701444B09F006B6B11 /* Reader-Mark-N@2x.png in Resources */,
+				45D9DE8E17FDF0B300581962 /* AppIcon-076.png in Resources */,
 				45F624711444B09F006B6B11 /* Reader-Mark-Y.png in Resources */,
 				45F624721444B09F006B6B11 /* Reader-Mark-Y@2x.png in Resources */,
 				45F624731444B09F006B6B11 /* Reader-Print.png in Resources */,
 				45F624741444B09F006B6B11 /* Reader-Print@2x.png in Resources */,
+				45D9DE8F17FDF0B300581962 /* AppIcon-120.png in Resources */,
 				45F624751444B09F006B6B11 /* Reader-Thumbs.png in Resources */,
 				45F624761444B09F006B6B11 /* Reader-Thumbs@2x.png in Resources */,
 				45E2B4EC144CC68E00B497D0 /* help.html in Resources */,
@@ -644,10 +664,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = (
-					"$(ARCHS_STANDARD_32_BIT)",
-					armv6,
-				);
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -656,7 +672,6 @@
 				GCC_PREFIX_HEADER = "Viewer-Prefix.pch";
 				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "Viewer-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = Viewer;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -666,17 +681,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = (
-					"$(ARCHS_STANDARD_32_BIT)",
-					armv6,
-				);
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Viewer-Prefix.pch";
 				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "Viewer-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = Viewer;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -686,11 +696,9 @@
 		458304E71341518700849EF5 /* Testing */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					"$(ARCHS_STANDARD_32_BIT)",
-					armv6,
-				);
+				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -700,10 +708,13 @@
 				GCC_PREPROCESSOR_DEFINITIONS = TESTING;
 				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -714,17 +725,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = (
-					"$(ARCHS_STANDARD_32_BIT)",
-					armv6,
-				);
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Viewer-Prefix.pch";
 				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "Viewer-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = Viewer;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -733,11 +739,9 @@
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					"$(ARCHS_STANDARD_32_BIT)",
-					armv6,
-				);
+				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -747,10 +751,14 @@
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
 				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -759,11 +767,9 @@
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					"$(ARCHS_STANDARD_32_BIT)",
-					armv6,
-				);
+				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -773,12 +779,14 @@
 				GCC_PREPROCESSOR_DEFINITIONS = NDEBUG;
 				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "87A9AD1E-548E-4E5E-9D91-294E48419B0C";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

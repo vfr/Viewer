@@ -1,6 +1,6 @@
 //
 //	FoldersViewController.m
-//	Viewer v1.0.2
+//	Viewer v1.1.0
 //
 //	Created by Julius Oklamcak on 2012-09-01.
 //	Copyright © 2011-2013 Julius Oklamcak. All rights reserved.
@@ -55,6 +55,8 @@
 
 #define CANCEL_BUTTON_WIDTH 56.0f
 
+#define STATUS_HEIGHT 20.0f
+
 #define TOOLBAR_HEIGHT 44.0f
 
 #define MAXIMUM_TABLE_WIDTH 288.0f
@@ -107,9 +109,17 @@
 
 	assert(delegate != nil); // Check delegate
 
-	self.view.backgroundColor = [UIColor scrollViewTexturedBackgroundColor];
+	self.view.backgroundColor = [UIColor grayColor];
 
 	CGRect viewRect = self.view.bounds; // View controller's view bounds
+
+	if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
+	{
+		if ([self prefersStatusBarHidden] == NO) // Visible status bar
+		{
+			viewRect.origin.y += STATUS_HEIGHT;
+		}
+	}
 
 	CGRect toolbarRect = viewRect; toolbarRect.size.height = TOOLBAR_HEIGHT;
 
@@ -155,7 +165,7 @@
 
 	theTitleLabel = [[UILabel alloc] initWithFrame:titleRect];
 
-	theTitleLabel.textAlignment = UITextAlignmentCenter;
+	theTitleLabel.textAlignment = NSTextAlignmentCenter;
 	theTitleLabel.font = [UIFont systemFontOfSize:19.0f];
 	theTitleLabel.textColor = [UIColor colorWithWhite:0.0f alpha:1.0f];
 	theTitleLabel.shadowColor = [UIColor colorWithWhite:0.65f alpha:1.0f];
@@ -175,9 +185,9 @@
 
 	theTableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 
-	theTableView.dataSource = self; theTableView.delegate = self; // Set the delegates to self
+	theTableView.backgroundColor = [UIColor whiteColor]; theTableView.rowHeight = TABLE_CELL_HEIGHT;
 
-	theTableView.rowHeight = TABLE_CELL_HEIGHT;
+	theTableView.dataSource = self; theTableView.delegate = self; // Set the delegates to self
 
 	[self.view addSubview:theTableView];
 }
@@ -219,6 +229,16 @@
 	theTableView = nil;
 
 	[super viewDidUnload];
+}
+
+- (BOOL)prefersStatusBarHidden
+{
+	return [[NSUserDefaults standardUserDefaults] boolForKey:kReaderSettingsHideStatusBar];
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+	return UIStatusBarStyleLightContent;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -273,7 +293,7 @@
 	{
 		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"tvCellFolder"];
 
-		cell.textLabel.font = [UIFont systemFontOfSize:17.0]; cell.textLabel.textAlignment = UITextAlignmentCenter;
+		cell.textLabel.font = [UIFont systemFontOfSize:17.0]; cell.textLabel.textAlignment = NSTextAlignmentCenter;
 
 		cell.selectionStyle = UITableViewCellSelectionStyleGray; // Use gray instead of blue
 	}

@@ -1,6 +1,6 @@
 //
 //	LibraryDocumentsView.m
-//	Viewer v1.0.2
+//	Viewer v1.1.0
 //
 //	Created by Julius Oklamcak on 2012-09-01.
 //	Copyright © 2011-2013 Julius Oklamcak. All rights reserved.
@@ -177,7 +177,7 @@
 		self.userInteractionEnabled = YES;
 		self.contentMode = UIViewContentModeRedraw;
 		self.autoresizingMask = UIViewAutoresizingNone;
-		self.backgroundColor = [UIColor scrollViewTexturedBackgroundColor];
+		self.backgroundColor = [UIColor grayColor];
 
 		CGRect viewRect = self.bounds; // View's bounds
 
@@ -256,7 +256,7 @@
 
 		theTitleLabel = [[UILabel alloc] initWithFrame:titleRect];
 
-		theTitleLabel.textAlignment = UITextAlignmentCenter;
+		theTitleLabel.textAlignment = NSTextAlignmentCenter;
 		theTitleLabel.font = [UIFont systemFontOfSize:19.0f];
 		theTitleLabel.textColor = [UIColor colorWithWhite:0.0f alpha:1.0f];
 		theTitleLabel.shadowColor = [UIColor colorWithWhite:0.65f alpha:1.0f];
@@ -265,7 +265,7 @@
 		theTitleLabel.backgroundColor = [UIColor clearColor];
 		theTitleLabel.shadowOffset = CGSizeMake(0.0f, 1.0f);
 		theTitleLabel.adjustsFontSizeToFitWidth = YES;
-		theTitleLabel.minimumFontSize = 14.0f;
+		theTitleLabel.minimumScaleFactor = 0.75f;
 
 		[theToolbar addSubview:theTitleLabel]; // Add to toolbar
 
@@ -610,7 +610,7 @@
 				foldersViewController.modalPresentationStyle = UIModalPresentationFullScreen;
 				foldersViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
 
-				[self.ownViewController presentModalViewController:foldersViewController animated:YES];
+				[self.ownViewController presentViewController:foldersViewController animated:YES completion:NULL];
 			}
 		}
 		else // Handle recent documents folder type
@@ -724,12 +724,12 @@
 	if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad)
 		[popoverController dismissPopoverAnimated:NO]; // Dismiss the popover
 	else
-		[self.ownViewController dismissModalViewControllerAnimated:YES];
+		[self.ownViewController dismissViewControllerAnimated:YES completion:NULL];
 }
 
 - (void)dismissFoldersViewController:(FoldersViewController *)viewController
 {
-	[self.ownViewController dismissModalViewControllerAnimated:YES];
+	[self.ownViewController dismissViewControllerAnimated:YES completion:NULL];
 }
 
 #pragma mark DocumentFolder notifications
@@ -928,11 +928,11 @@
 		titleLabel.userInteractionEnabled = NO;
 		titleLabel.contentMode = UIViewContentModeRedraw;
 		titleLabel.autoresizingMask = UIViewAutoresizingNone;
-		titleLabel.textAlignment = UITextAlignmentCenter;
+		titleLabel.textAlignment = NSTextAlignmentCenter;
 		titleLabel.font = [UIFont systemFontOfSize:13.0f];
 		titleLabel.textColor = [UIColor colorWithWhite:0.16f alpha:1.0f];
 		titleLabel.backgroundColor = [UIColor clearColor];
-		titleLabel.lineBreakMode = UILineBreakModeCharacterWrap;
+		titleLabel.lineBreakMode = NSLineBreakByCharWrapping;
 		titleLabel.numberOfLines = 0; // Fit in bounds
 
 		[titleView addSubview:titleLabel]; // Add label to text view

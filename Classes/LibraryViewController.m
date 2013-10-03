@@ -1,6 +1,6 @@
 //
 //	LibraryViewController.m
-//	Viewer v1.0.0
+//	Viewer v1.1.0
 //
 //	Created by Julius Oklamcak on 2012-09-01.
 //	Copyright © 2011-2013 Julius Oklamcak. All rights reserved.
@@ -65,6 +65,8 @@
 #define DIRECTORY_TAG 1
 #define DOCUMENTS_TAG 2
 
+#define STATUS_HEIGHT 20.0f
+
 #define DEFAULT_DURATION 0.3
 
 #pragma mark Properties
@@ -115,9 +117,9 @@
 
 		if (CGPDFDocumentNeedsPassword(fileURL, document.password) == NO) // Nope
 		{
-			if (self.modalViewController != nil) // Check for active view controller(s)
+			if (self.presentedViewController != nil) // Check for active view controller(s)
 			{
-				[self dismissModalViewControllerAnimated:NO]; // Dismiss any view controller(s)
+				[self dismissViewControllerAnimated:NO completion:NULL]; // Dismiss any view controller(s)
 			}
 
 			NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults]; // User defaults
@@ -141,7 +143,7 @@
 			readerViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
 			readerViewController.modalPresentationStyle = UIModalPresentationFullScreen;
 
-			[self presentModalViewController:readerViewController animated:NO];
+			[self presentViewController:readerViewController animated:NO completion:NULL];
 		}
 	}
 }
@@ -172,6 +174,14 @@
 	self.view.backgroundColor = [UIColor clearColor];
 
 	CGRect viewRect = self.view.bounds; // View controller's view bounds
+
+	if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
+	{
+		if ([self prefersStatusBarHidden] == NO) // Visible status bar
+		{
+			viewRect.origin.y += STATUS_HEIGHT;
+		}
+	}
 
 	theScrollView = [[UIScrollView alloc] initWithFrame:viewRect]; // All
 
@@ -324,6 +334,16 @@
 	[super viewDidUnload];
 }
 
+- (BOOL)prefersStatusBarHidden
+{
+	return [[NSUserDefaults standardUserDefaults] boolForKey:kReaderSettingsHideStatusBar];
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+	return UIStatusBarStyleLightContent;
+}
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
 	if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone)
@@ -453,7 +473,7 @@
 		readerViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
 		readerViewController.modalPresentationStyle = UIModalPresentationFullScreen;
 
-		[self presentModalViewController:readerViewController animated:NO];
+		[self presentViewController:readerViewController animated:NO completion:NULL];
 	}
 }
 
@@ -470,7 +490,7 @@
 		[[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationNone];
 	}
 
-	[self dismissModalViewControllerAnimated:NO]; readerViewController = nil; // Release ReaderViewController
+	[self dismissViewControllerAnimated:NO completion:NULL]; readerViewController = nil; // Release ReaderViewController
 
 	[documentsView refreshRecentDocuments]; // Refresh if recent folder is visible
 }
@@ -587,7 +607,7 @@
 		titleLabel.text = [labelText stringByAppendingString:@"..."];
 		titleLabel.textColor = [UIColor colorWithWhite:0.9f alpha:1.0f];
 		titleLabel.backgroundColor = [UIColor clearColor];
-		titleLabel.textAlignment = UITextAlignmentCenter;
+		titleLabel.textAlignment = NSTextAlignmentCenter;
 
 		titleLabel.autoresizingMask = resizingMask;
 
