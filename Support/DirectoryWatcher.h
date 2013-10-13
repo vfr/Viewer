@@ -20,14 +20,14 @@
 
 @interface DirectoryWatcher : NSObject
 {
-	id <DirectoryWatcherDelegate> __unsafe_unretained delegate;
+	id <DirectoryWatcherDelegate> __weak delegate;
 
 	CFFileDescriptorRef dirKQRef;
 	int dirFD;
 	int kq;
 }
 
-@property (nonatomic, unsafe_unretained, readwrite) id <DirectoryWatcherDelegate> delegate;
+@property (nonatomic, weak, readwrite) id <DirectoryWatcherDelegate> delegate;
 
 + (DirectoryWatcher *)watchFolderWithPath:(NSString *)watchPath delegate:(id<DirectoryWatcherDelegate>)watchDelegate;
 

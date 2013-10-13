@@ -1,6 +1,6 @@
 //
 //	LibraryViewController.h
-//	Viewer v1.0.0
+//	Viewer v1.1.1
 //
 //	Created by Julius Oklamcak on 2012-09-01.
 //	Copyright © 2011-2013 Julius Oklamcak. All rights reserved.
@@ -37,7 +37,7 @@
 
 @interface LibraryViewController : UIViewController
 
-@property (nonatomic, unsafe_unretained, readwrite) id <LibraryViewControllerDelegate> delegate;
+@property (nonatomic, weak, readwrite) id <LibraryViewControllerDelegate> delegate;
 
 @end
 

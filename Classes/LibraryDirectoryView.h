@@ -1,6 +1,6 @@
 //
 //	LibraryDirectoryView.h
-//	Viewer v1.0.0
+//	Viewer v1.1.1
 //
 //	Created by Julius Oklamcak on 2012-09-01.
 //	Copyright © 2011-2013 Julius Oklamcak. All rights reserved.
@@ -45,9 +45,9 @@
 
 @interface LibraryDirectoryView : UIView
 
-@property (nonatomic, unsafe_unretained, readwrite) id <LibraryDirectoryDelegate> delegate;
+@property (nonatomic, weak, readwrite) id <LibraryDirectoryDelegate> delegate;
 
-@property (nonatomic, unsafe_unretained, readwrite) UIViewController *ownViewController;
+@property (nonatomic, weak, readwrite) UIViewController *ownViewController;
 
 - (void)handleMemoryWarning;
 
