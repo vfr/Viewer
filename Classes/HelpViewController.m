@@ -1,6 +1,6 @@
 //
 //	HelpViewController.m
-//	Viewer v1.1.0
+//	Viewer v1.1.2
 //
 //	Created by Julius Oklamcak on 2012-09-01.
 //	Copyright © 2011-2013 Julius Oklamcak. All rights reserved.
@@ -84,27 +84,40 @@
 
 	assert(delegate != nil); // Check delegate
 
-	self.view.backgroundColor = [UIColor grayColor];
+	self.view.backgroundColor = [UIColor grayColor]; // Neutral gray
 
-	CGRect viewRect = self.view.bounds; // View controller's view bounds
+	UIUserInterfaceIdiom userInterfaceIdiom = [UIDevice currentDevice].userInterfaceIdiom;
 
-	if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
+	CGRect viewRect = self.view.bounds; UIView *fakeStatusBar = nil;
+
+	if (userInterfaceIdiom == UIUserInterfaceIdiomPhone) // Small device
 	{
-		if ([self prefersStatusBarHidden] == NO) // Visible status bar
+		if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) // iOS 7+
 		{
-			viewRect.origin.y += STATUS_HEIGHT;
+			if ([self prefersStatusBarHidden] == NO) // Visible status bar
+			{
+				CGRect statusBarRect = self.view.bounds; // Status bar frame
+				statusBarRect.size.height = STATUS_HEIGHT; // Default status height
+				fakeStatusBar = [[UIView alloc] initWithFrame:statusBarRect]; // UIView
+				fakeStatusBar.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+				fakeStatusBar.backgroundColor = [UIColor blackColor];
+				fakeStatusBar.contentMode = UIViewContentModeRedraw;
+				fakeStatusBar.userInteractionEnabled = NO;
+
+				viewRect.origin.y += STATUS_HEIGHT; viewRect.size.height -= STATUS_HEIGHT;
+			}
 		}
 	}
 
 	CGRect toolbarRect = viewRect; toolbarRect.size.height = TOOLBAR_HEIGHT;
-
-	theToolbar = [[UIXToolbarView alloc] initWithFrame:toolbarRect]; // At top
+	theToolbar = [[UIXToolbarView alloc] initWithFrame:toolbarRect]; // UIXToolbarView
+	[self.view addSubview:theToolbar]; // Add toolbar to view controller view
 
 	CGFloat toolbarWidth = theToolbar.bounds.size.width; // Toolbar width
 
 	CGFloat titleX = BUTTON_SPACE; CGFloat titleWidth = (toolbarWidth - (BUTTON_SPACE + BUTTON_SPACE));
 
-	if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone)
+	if (userInterfaceIdiom == UIUserInterfaceIdiomPhone) // Small device
 	{
 		UIImage *imageH = [UIImage imageNamed:@"Reader-Button-H"];
 		UIImage *imageN = [UIImage imageNamed:@"Reader-Button-N"];
@@ -117,7 +130,6 @@
 		CGFloat rightButtonX = (toolbarWidth - (CLOSE_BUTTON_WIDTH + BUTTON_SPACE)); // X
 
 		UIButton *closeButton = [UIButton buttonWithType:UIButtonTypeCustom]; // Close button
-
 		closeButton.frame = CGRectMake(rightButtonX, BUTTON_Y, CLOSE_BUTTON_WIDTH, BUTTON_HEIGHT);
 		[closeButton setTitle:NSLocalizedString(@"Close", @"button") forState:UIControlStateNormal];
 		[closeButton setTitleColor:[UIColor colorWithWhite:0.0f alpha:1.0f] forState:UIControlStateNormal];
@@ -128,8 +140,7 @@
 		closeButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
 		closeButton.titleLabel.font = [UIFont systemFontOfSize:14.0f];
 		closeButton.exclusiveTouch = YES;
-
-		[theToolbar addSubview:closeButton]; // Add to toolbar
+		[theToolbar addSubview:closeButton]; // Add button to toolbar
 	}
 	else // Large device
 	{
@@ -137,15 +148,11 @@
 	}
 
 	NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
-
 	NSString *name = [infoDictionary objectForKey:(NSString *)kCFBundleNameKey];
-
 	NSString *version = [infoDictionary objectForKey:(NSString *)kCFBundleVersionKey];
 
 	CGRect titleRect = CGRectMake(titleX, TITLE_Y, titleWidth, TITLE_HEIGHT);
-
 	theTitleLabel = [[UILabel alloc] initWithFrame:titleRect];
-
 	theTitleLabel.textAlignment = NSTextAlignmentCenter;
 	theTitleLabel.font = [UIFont systemFontOfSize:17.0f];
 	theTitleLabel.textColor = [UIColor colorWithWhite:0.0f alpha:1.0f];
@@ -153,23 +160,20 @@
 	theTitleLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 	theTitleLabel.backgroundColor = [UIColor clearColor];
 	theTitleLabel.shadowOffset = CGSizeMake(0.0f, 1.0f);
-
 	theTitleLabel.text = [NSString stringWithFormat:@"%@ v%@", name, version];
-
 	[theToolbar addSubview:theTitleLabel]; // Add title to toolbar
 
-	[self.view addSubview:theToolbar]; // Add toolbar to controller view
-
 	CGRect helpRect = viewRect; helpRect.origin.y += TOOLBAR_HEIGHT; helpRect.size.height -= TOOLBAR_HEIGHT;
-
-	theWebView = [[UIWebView alloc] initWithFrame:helpRect]; // Rest of view
-
-	theWebView.scalesPageToFit = NO;
-	theWebView.dataDetectorTypes = UIDataDetectorTypeNone;
+	theWebView = [[UIWebView alloc] initWithFrame:helpRect]; // UIWebView
+	theWebView.dataDetectorTypes = UIDataDetectorTypeNone; theWebView.scalesPageToFit = NO;
 	theWebView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-	theWebView.delegate = self;
-
+	theWebView.delegate = self; // UIWebViewDelegate
 	[self.view insertSubview:theWebView belowSubview:theToolbar];
+
+	if (userInterfaceIdiom == UIUserInterfaceIdiomPhone) // Small device
+	{
+		if (fakeStatusBar != nil) [self.view addSubview:fakeStatusBar]; // Add status bar background view
+	}
 }
 
 - (void)viewWillAppear:(BOOL)animated

@@ -1,6 +1,6 @@
 //
 //	LibraryViewController.m
-//	Viewer v1.1.0
+//	Viewer v1.1.2
 //
 //	Created by Julius Oklamcak on 2012-09-01.
 //	Copyright © 2011-2013 Julius Oklamcak. All rights reserved.
@@ -173,36 +173,37 @@
 
 	self.view.backgroundColor = [UIColor clearColor];
 
-	CGRect viewRect = self.view.bounds; // View controller's view bounds
+	CGRect scrollViewRect = self.view.bounds; UIView *fakeStatusBar = nil;
 
-	if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
+	if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) // iOS 7+
 	{
 		if ([self prefersStatusBarHidden] == NO) // Visible status bar
 		{
-			viewRect.origin.y += STATUS_HEIGHT;
+			CGRect statusBarRect = self.view.bounds; // Status bar frame
+			statusBarRect.size.height = STATUS_HEIGHT; // Default status height
+			fakeStatusBar = [[UIView alloc] initWithFrame:statusBarRect]; // UIView
+			fakeStatusBar.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+			fakeStatusBar.backgroundColor = [UIColor blackColor];
+			fakeStatusBar.contentMode = UIViewContentModeRedraw;
+			fakeStatusBar.userInteractionEnabled = NO;
+
+			scrollViewRect.origin.y += STATUS_HEIGHT; scrollViewRect.size.height -= STATUS_HEIGHT;
 		}
 	}
 
-	theScrollView = [[UIScrollView alloc] initWithFrame:viewRect]; // All
-
-	theScrollView.bounces = NO;
-	theScrollView.scrollsToTop = NO;
-	theScrollView.pagingEnabled = YES;
-	theScrollView.delaysContentTouches = NO;
-	theScrollView.showsVerticalScrollIndicator = NO;
-	theScrollView.showsHorizontalScrollIndicator = NO;
-	theScrollView.contentMode = UIViewContentModeRedraw;
+	theScrollView = [[UIScrollView alloc] initWithFrame:scrollViewRect]; // UIScrollView
+	theScrollView.autoresizesSubviews = NO; theScrollView.contentMode = UIViewContentModeRedraw;
+	theScrollView.showsHorizontalScrollIndicator = NO; theScrollView.showsVerticalScrollIndicator = NO;
+	theScrollView.scrollsToTop = NO; theScrollView.delaysContentTouches = NO; theScrollView.pagingEnabled = YES;
 	theScrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-	theScrollView.backgroundColor = [UIColor clearColor];
-	theScrollView.userInteractionEnabled = YES;
-	theScrollView.autoresizesSubviews = NO;
-	theScrollView.delegate = self;
-
+	theScrollView.backgroundColor = [UIColor clearColor]; theScrollView.bounces = NO;
+	theScrollView.delegate = self; // UIScrollViewDelegate
 	[self.view addSubview:theScrollView];
 
-	updatingView = [[LibraryUpdatingView alloc] initWithFrame:viewRect]; // All
-
+	updatingView = [[LibraryUpdatingView alloc] initWithFrame:scrollViewRect]; // LibraryUpdatingView
 	[self.view addSubview:updatingView];
+
+	if (fakeStatusBar != nil) [self.view addSubview:fakeStatusBar]; // Add status bar background view
 
 	contentViews = [NSMutableArray new];
 }
