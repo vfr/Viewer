@@ -1,9 +1,9 @@
 //
 //	ReaderContentPage.m
-//	Reader v2.7.3
+//	Reader v2.8.1
 //
 //	Created by Julius Oklamcak on 2011-07-01.
-//	Copyright © 2011-2013 Julius Oklamcak. All rights reserved.
+//	Copyright © 2011-2014 Julius Oklamcak. All rights reserved.
 //
 //	Permission is hereby granted, free of charge, to any person obtaining a copy
 //	of this software and associated documentation files (the "Software"), to deal
@@ -45,14 +45,14 @@
 	CGFloat _pageOffsetY;
 }
 
-#pragma mark ReaderContentPage class methods
+#pragma mark - ReaderContentPage class methods
 
 + (Class)layerClass
 {
 	return [ReaderContentTile class];
 }
 
-#pragma mark ReaderContentPage PDF link methods
+#pragma mark - ReaderContentPage PDF link methods
 
 - (void)highlightPageLinks
 {
@@ -404,40 +404,29 @@
 	return result;
 }
 
-#pragma mark ReaderContentPage instance methods
+#pragma mark - ReaderContentPage instance methods
 
-- (id)initWithFrame:(CGRect)frame
+- (instancetype)initWithFrame:(CGRect)frame
 {
-	id view = nil; // UIView
-
-	if (CGRectIsEmpty(frame) == false)
+	if ((self = [super initWithFrame:frame]))
 	{
-		if ((self = [super initWithFrame:frame]))
-		{
-			self.autoresizesSubviews = NO;
-			self.userInteractionEnabled = NO;
-			self.contentMode = UIViewContentModeRedraw;
-			self.autoresizingMask = UIViewAutoresizingNone;
-			self.backgroundColor = [UIColor clearColor];
-
-			view = self; // Return self
-		}
-	}
-	else // Handle invalid frame size
-	{
-		self = nil;
+		self.autoresizesSubviews = NO;
+		self.userInteractionEnabled = NO;
+		self.contentMode = UIViewContentModeRedraw;
+		self.autoresizingMask = UIViewAutoresizingNone;
+		self.backgroundColor = [UIColor clearColor];
 	}
 
-	return view;
+	return self;
 }
 
-- (id)initWithURL:(NSURL *)fileURL page:(NSInteger)page password:(NSString *)phrase
+- (instancetype)initWithURL:(NSURL *)fileURL page:(NSInteger)page password:(NSString *)phrase
 {
 	CGRect viewRect = CGRectZero; // View rect
 
 	if (fileURL != nil) // Check for non-nil file URL
 	{
-		_PDFDocRef = CGPDFDocumentCreateX((__bridge CFURLRef)fileURL, phrase);
+		_PDFDocRef = CGPDFDocumentCreateUsingUrl((__bridge CFURLRef)fileURL, phrase);
 
 		if (_PDFDocRef != NULL) // Check for non-NULL CGPDFDocumentRef
 		{
@@ -505,9 +494,9 @@
 		NSAssert(NO, @"fileURL == nil");
 	}
 
-	id view = [self initWithFrame:viewRect]; // UIView setup
+	ReaderContentPage *view = [self initWithFrame:viewRect];
 
-	if (view != nil) [self buildAnnotationLinksList]; // Links
+	if (view != nil) [self buildAnnotationLinksList];
 
 	return view;
 }
@@ -537,7 +526,7 @@
 
 #endif // end of READER_DISABLE_RETINA Option
 
-#pragma mark CATiledLayer delegate methods
+#pragma mark - CATiledLayer delegate methods
 
 - (void)drawLayer:(CATiledLayer *)layer inContext:(CGContextRef)context
 {
@@ -575,21 +564,21 @@
 	CGRect _rect;
 }
 
-#pragma mark Properties
+#pragma mark - Properties
 
 @synthesize rect = _rect;
 @synthesize dictionary = _dictionary;
 
-#pragma mark ReaderDocumentLink class methods
+#pragma mark - ReaderDocumentLink class methods
 
-+ (id)newWithRect:(CGRect)linkRect dictionary:(CGPDFDictionaryRef)linkDictionary
++ (instancetype)newWithRect:(CGRect)linkRect dictionary:(CGPDFDictionaryRef)linkDictionary
 {
 	return [[ReaderDocumentLink alloc] initWithRect:linkRect dictionary:linkDictionary];
 }
 
-#pragma mark ReaderDocumentLink instance methods
+#pragma mark - ReaderDocumentLink instance methods
 
-- (id)initWithRect:(CGRect)linkRect dictionary:(CGPDFDictionaryRef)linkDictionary
+- (instancetype)initWithRect:(CGRect)linkRect dictionary:(CGPDFDictionaryRef)linkDictionary
 {
 	if ((self = [super init]))
 	{

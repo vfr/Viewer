@@ -1,9 +1,9 @@
 //
 //	UIXToolbarView.m
-//	Reader v2.6.0
+//	Reader v2.8.2
 //
 //	Created by Julius Oklamcak on 2011-09-01.
-//	Copyright © 2011-2013 Julius Oklamcak. All rights reserved.
+//	Copyright © 2011-2014 Julius Oklamcak. All rights reserved.
 //
 //	Permission is hereby granted, free of charge, to any person obtaining a copy
 //	of this software and associated documentation files (the "Software"), to deal
@@ -23,26 +23,31 @@
 //	CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
+#import "ReaderConstants.h"
 #import "UIXToolbarView.h"
 
 #import <QuartzCore/QuartzCore.h>
 
 @implementation UIXToolbarView
 
-#pragma mark Constants
+#pragma mark - Constants
 
 #define SHADOW_HEIGHT 4.0f
 
-#pragma mark UIXToolbarView class methods
+#pragma mark - UIXToolbarView class methods
 
 + (Class)layerClass
 {
+#if (READER_FLAT_UI == FALSE) // Option
 	return [CAGradientLayer class];
+#else
+	return [CALayer class];
+#endif // end of READER_FLAT_UI Option
 }
 
-#pragma mark UIXToolbarView instance methods
+#pragma mark - UIXToolbarView instance methods
 
-- (id)initWithFrame:(CGRect)frame
+- (instancetype)initWithFrame:(CGRect)frame
 {
 	if ((self = [super initWithFrame:frame]))
 	{
@@ -50,18 +55,36 @@
 		self.userInteractionEnabled = YES;
 		self.contentMode = UIViewContentModeRedraw;
 		self.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-		self.backgroundColor = [UIColor clearColor];
 
-		CAGradientLayer *layer = (CAGradientLayer *)self.layer;
-		UIColor *liteColor = [UIColor colorWithWhite:0.92f alpha:0.8f];
-		UIColor *darkColor = [UIColor colorWithWhite:0.32f alpha:0.8f];
-		layer.colors = [NSArray arrayWithObjects:(id)liteColor.CGColor, (id)darkColor.CGColor, nil];
+		if ([self.layer isKindOfClass:[CAGradientLayer class]])
+		{
+			self.backgroundColor = [UIColor clearColor];
 
-		CGRect shadowRect = self.bounds; shadowRect.origin.y += shadowRect.size.height; shadowRect.size.height = SHADOW_HEIGHT;
+			CAGradientLayer *layer = (CAGradientLayer *)self.layer;
+			UIColor *liteColor = [UIColor colorWithWhite:0.92f alpha:0.8f];
+			UIColor *darkColor = [UIColor colorWithWhite:0.32f alpha:0.8f];
+			layer.colors = [NSArray arrayWithObjects:(id)liteColor.CGColor, (id)darkColor.CGColor, nil];
 
-		UIXToolbarShadow *shadowView = [[UIXToolbarShadow alloc] initWithFrame:shadowRect];
+			CGRect shadowRect = self.bounds; shadowRect.origin.y += shadowRect.size.height; shadowRect.size.height = SHADOW_HEIGHT;
 
-		[self addSubview:shadowView]; 
+			UIXToolbarShadow *shadowView = [[UIXToolbarShadow alloc] initWithFrame:shadowRect];
+
+			[self addSubview:shadowView]; // Add shadow to toolbar
+		}
+		else // Follow The Fuglyosity of Flat Fad
+		{
+			self.backgroundColor = [UIColor colorWithWhite:0.94f alpha:0.94f];
+
+			CGRect lineRect = self.bounds; lineRect.origin.y += lineRect.size.height; lineRect.size.height = 1.0f;
+
+			UIView *lineView = [[UIView alloc] initWithFrame:lineRect];
+			lineView.autoresizesSubviews = NO;
+			lineView.userInteractionEnabled = NO;
+			lineView.contentMode = UIViewContentModeRedraw;
+			lineView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+			lineView.backgroundColor = [UIColor colorWithWhite:0.64f alpha:0.94f];
+			[self addSubview:lineView];
+		}
 	}
 
 	return self;
@@ -77,16 +100,16 @@
 
 @implementation UIXToolbarShadow
 
-#pragma mark UIXToolbarShadow class methods
+#pragma mark - UIXToolbarShadow class methods
 
 + (Class)layerClass
 {
 	return [CAGradientLayer class];
 }
 
-#pragma mark UIXToolbarShadow instance methods
+#pragma mark - UIXToolbarShadow instance methods
 
-- (id)initWithFrame:(CGRect)frame
+- (instancetype)initWithFrame:(CGRect)frame
 {
 	if ((self = [super initWithFrame:frame]))
 	{

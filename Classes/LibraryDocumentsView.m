@@ -1,9 +1,9 @@
 //
 //	LibraryDocumentsView.m
-//	Viewer v1.1.0
+//	Viewer v1.2.0
 //
 //	Created by Julius Oklamcak on 2012-09-01.
-//	Copyright © 2011-2013 Julius Oklamcak. All rights reserved.
+//	Copyright © 2011-2014 Julius Oklamcak. All rights reserved.
 //
 //	Permission is hereby granted, free of charge, to any person obtaining a copy
 //	of this software and associated documentation files (the "Software"), to deal
@@ -421,7 +421,7 @@
 		{
 			CFURLRef fileURL = (__bridge CFURLRef)document.fileURL; // File URL
 
-			if (CGPDFDocumentNeedsPassword(fileURL, document.password) == NO)
+			if (CGPDFDocumentUrlNeedsPassword(fileURL, document.password) == NO)
 			{
 				[delegate documentsView:self didSelectReaderDocument:document];
 			}
@@ -515,7 +515,7 @@
 			{
 				CFURLRef fileURL = (__bridge CFURLRef)openDocument.fileURL; // Document file URL
 
-				should = ((CGPDFDocumentNeedsPassword(fileURL, text) == NO) ? YES : NO);
+				should = ((CGPDFDocumentUrlNeedsPassword(fileURL, text) == NO) ? YES : NO);
 
 				NSString *status = (should ? nil : NSLocalizedString(@"IncorrectPassword", @"text"));
 

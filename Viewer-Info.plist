@@ -8,6 +8,7 @@
 	<string>en</string>
 	<key>CFBundleIconFiles</key>
 	<array>
+		<string>AppIcon-180.png</string>
 		<string>AppIcon-152.png</string>
 		<string>AppIcon-144.png</string>
 		<string>AppIcon-120.png</string>
@@ -29,9 +30,9 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1.1.3</string>
+	<string>1.2.0</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.1.3</string>
+	<string>1.2.0</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIPrerenderedIcon</key>

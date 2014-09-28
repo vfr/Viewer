@@ -24,8 +24,8 @@ code from the https://github.com/vfr/Reader repository on GitHub.
 
 ### Notes
 
-Current development and testing of the PDF Viewer App is under Xcode 5.0,
-LLVM 5.0 and iOS 7. The code uses ARC memory management and should work
+Current development and testing of the PDF Viewer App is under Xcode 6.0,
+LLVM 6.0 and iOS 8. The code uses ARC memory management and should work
 under iOS 6 as well.
 
 Please see https://github.com/vfr/Reader/blob/master/README.md for notes
@@ -36,6 +36,8 @@ on the core code that the PDF Viewer App uses.
 Website: [http://www.vfr.org/](http://www.vfr.org/)
 
 Email: joklamcak(at)gmail(dot)com
+
+Twitter: [@joklamcak](https://twitter.com/joklamcak)
 
 If you find this code useful, or wish to fund further development,
 you can use PayPal to donate to the vfr-Viewer project:
@@ -48,13 +50,7 @@ This code has been made available under the MIT License.
 
 ### Screen Captures
 
-![Viewer-Screen_LD_1.png](http://i.imgur.com/Kgg2CsJ.png)
-![Viewer-Screen_LD_2.png](http://i.imgur.com/093sqKG.jpg)
-![Viewer-Screen_LD_3.png](http://i.imgur.com/l7s2M32.png)
-![Viewer-Screen_LD_4.png](http://i.imgur.com/s1UA5x2.png)
-![Viewer-Screen_LD_5.png](http://i.imgur.com/1M4UlbI.jpg)
-![Viewer-Screen_SD_1.png](http://i.imgur.com/5ToUoDD.png)
-![Viewer-Screen_SD_2.png](http://i.imgur.com/J7PhSki.jpg)
-![Viewer-Screen_SD_3.png](http://i.imgur.com/4wz17F6.png)
-![Viewer-Screen_SD_4.png](http://i.imgur.com/kge0hLZ.png)
-![Viewer-Screen_SD_5.png](http://i.imgur.com/OmVWsEQ.jpg)
+![iPad Page](http://i.imgur.com/jaeCPz1.png)<p></p>
+![iPad Thumbs](http://i.imgur.com/1b4kY9s.png)<p></p>
+![iPod Page](http://i.imgur.com/y8wWRDN.png)<p></p>
+![iPod Thumbs](http://i.imgur.com/nddT2RP.png)<p></p>

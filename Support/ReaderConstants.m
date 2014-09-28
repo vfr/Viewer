@@ -1,9 +1,9 @@
 //
 //	ReaderConstants.m
-//	Viewer v1.0.0
+//	Viewer v1.2.0
 //
 //	Created by Julius Oklamcak on 2012-09-01.
-//	Copyright © 2011-2013 Julius Oklamcak. All rights reserved.
+//	Copyright © 2011-2014 Julius Oklamcak. All rights reserved.
 //
 //	Permission is hereby granted, free of charge, to any person obtaining a copy
 //	of this software and associated documentation files (the "Software"), to deal
@@ -25,7 +25,7 @@
 
 #import "ReaderConstants.h"
 
-NSString *const kReaderCopyrightNotice = @"Viewer v1.x • Copyright © 2011-2013 Julius Oklamcak. All rights reserved.";
+NSString *const kReaderCopyrightNotice = @"Viewer v1.x.y • Copyright © 2011-2014 Julius Oklamcak. All rights reserved.";
 
 NSString *const kReaderSettingsAppVersion = @"AppVersion";
 NSString *const kReaderSettingsCurrentFolder = @"CurrentFolder";

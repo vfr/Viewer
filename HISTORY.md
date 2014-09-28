@@ -1,6 +1,11 @@
 
 ## History
 
+2014-09-28: Version 1.2.0
+
+	- Pulled in PDF Reader Core for iOS v2.8.3 code.
+	- Cleaned up 64-bit code build compiler warnings.
+
 2013-11-19: Version 1.1.3
 
 	- Retina and zoom levels bug fixes.

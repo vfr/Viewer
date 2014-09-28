@@ -1,9 +1,9 @@
 //
 //	ReaderDocument.m
-//	Viewer v1.0.1
+//	Viewer v1.2.0
 //
 //	Created by Julius Oklamcak on 2012-09-01.
-//	Copyright © 2011-2013 Julius Oklamcak. All rights reserved.
+//	Copyright © 2011-2014 Julius Oklamcak. All rights reserved.
 //
 //	Permission is hereby granted, free of charge, to any person obtaining a copy
 //	of this software and associated documentation files (the "Software"), to deal
@@ -55,6 +55,7 @@
 @dynamic folder;
 @dynamic bookmarks;
 @synthesize isChecked;
+@dynamic canEmail, canExport, canPrint;
 
 #pragma mark ReaderDocument class methods
 
@@ -185,7 +186,7 @@
 
 	[request setEntity:[NSEntityDescription entityForName:kReaderDocument inManagedObjectContext:inMOC]];
 
-	[request setPredicate:predicate]; [request setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+	[request setPredicate:predicate]; if (sortDescriptor) [request setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
 
 	[request setReturnsObjectsAsFaults:YES]; [request setFetchBatchSize:32]; // Optimize fetch request
 
@@ -356,7 +357,7 @@
 	return _bookmarks;
 }
 
-- (void)updateProperties
+- (void)updateDocumentProperties
 {
 	CFURLRef docURLRef = (__bridge CFURLRef)self.fileURL; // File URL
 
@@ -382,7 +383,7 @@
 	self.fileSize = [fileAttributes objectForKey:NSFileSize]; // File size
 }
 
-- (void)saveReaderDocument
+- (void)archiveDocumentProperties
 {
 	if (_bookmarks != nil) // Archive bookmarks (tag) data
 	{
@@ -437,6 +438,21 @@
 - (void)willTurnIntoFault
 {
 	_bookmarks = nil; self.isChecked = NO;
+}
+
+- (BOOL)canEmail
+{
+	return YES;
+}
+
+- (BOOL)canExport
+{
+	return YES;
+}
+
+- (BOOL)canPrint
+{
+	return YES;
 }
 
 #pragma mark Notification name strings

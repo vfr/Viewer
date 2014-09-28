@@ -1,9 +1,9 @@
 //
 //	ReaderDocument.h
-//	Viewer v1.0.0
+//	Viewer v1.2.0
 //
 //	Created by Julius Oklamcak on 2012-09-01.
-//	Copyright © 2011-2013 Julius Oklamcak. All rights reserved.
+//	Copyright © 2011-2014 Julius Oklamcak. All rights reserved.
 //
 //	Permission is hereby granted, free of charge, to any person obtaining a copy
 //	of this software and associated documentation files (the "Software"), to deal
@@ -44,6 +44,10 @@
 @property (nonatomic, strong, readonly) NSMutableIndexSet *bookmarks;
 @property (nonatomic, assign, readwrite) BOOL isChecked;
 
+@property (nonatomic, readonly) BOOL canEmail;
+@property (nonatomic, readonly) BOOL canExport;
+@property (nonatomic, readonly) BOOL canPrint;
+
 + (NSArray *)allInMOC:(NSManagedObjectContext *)inMOC;
 + (NSArray *)allInMOC:(NSManagedObjectContext *)inMOC withName:(NSString *)name;
 + (NSArray *)allInMOC:(NSManagedObjectContext *)inMOC withFolder:(DocumentFolder *)object;
@@ -52,8 +56,8 @@
 + (void)deleteInMOC:(NSManagedObjectContext *)inMOC object:(ReaderDocument *)object fm:(NSFileManager *)fm;
 + (BOOL)existsInMOC:(NSManagedObjectContext *)inMOC name:(NSString *)string;
 
-- (void)updateProperties;
-- (void)saveReaderDocument;
+- (void)updateDocumentProperties;
+- (void)archiveDocumentProperties;
 - (BOOL)fileExistsAndValid;
 
 //extern NSString *const ReaderDocumentAddedNotification;

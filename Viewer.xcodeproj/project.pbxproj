@@ -20,6 +20,7 @@
 		45125903142B8871009BCAF5 /* LibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 451258FB142B8871009BCAF5 /* LibraryViewController.m */; };
 		45125908142B88AF009BCAF5 /* DocumentsUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = 45125905142B88AF009BCAF5 /* DocumentsUpdate.m */; };
 		45125909142B88AF009BCAF5 /* UIXTextEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 45125907142B88AF009BCAF5 /* UIXTextEntry.m */; };
+		451ACC5D19D85AC00010BAF9 /* Todo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 451ACC5C19D85AC00010BAF9 /* Todo.txt */; };
 		4521C5AF1360DCC300DD4856 /* DocumentFolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 4521C5AC1360DCC300DD4856 /* DocumentFolder.m */; };
 		4521C5B01360DCC300DD4856 /* ReaderDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 4521C5AE1360DCC300DD4856 /* ReaderDocument.m */; };
 		452825231434FF9F00744EB2 /* DirectoryWatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 452825221434FF9F00744EB2 /* DirectoryWatcher.m */; };
@@ -28,6 +29,7 @@
 		452E1F93161203EE00192ED2 /* HISTORY.md in Resources */ = {isa = PBXBuildFile; fileRef = 452E1F91161203EE00192ED2 /* HISTORY.md */; };
 		452E1F94161203EE00192ED2 /* LICENSE.md in Resources */ = {isa = PBXBuildFile; fileRef = 452E1F92161203EE00192ED2 /* LICENSE.md */; };
 		45449EB215153810009E47C2 /* AppIcon-144.png in Resources */ = {isa = PBXBuildFile; fileRef = 45449EB115153810009E47C2 /* AppIcon-144.png */; };
+		454719A619D8627B0059C4E5 /* AppIcon-180.png in Resources */ = {isa = PBXBuildFile; fileRef = 454719A519D8627B0059C4E5 /* AppIcon-180.png */; };
 		4552C17513413EB00000C190 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4552C17413413EB00000C190 /* Settings.bundle */; };
 		45550E4F1612086C003F2FAA /* ReaderDocumentOutline.m in Sources */ = {isa = PBXBuildFile; fileRef = 45550E4E1612086C003F2FAA /* ReaderDocumentOutline.m */; };
 		4567BAE01347751600311D51 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4567BADF1347751600311D51 /* CoreDataManager.m */; };
@@ -120,6 +122,7 @@
 		45125905142B88AF009BCAF5 /* DocumentsUpdate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DocumentsUpdate.m; path = Support/DocumentsUpdate.m; sourceTree = "<group>"; };
 		45125906142B88AF009BCAF5 /* UIXTextEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIXTextEntry.h; path = Support/UIXTextEntry.h; sourceTree = "<group>"; };
 		45125907142B88AF009BCAF5 /* UIXTextEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIXTextEntry.m; path = Support/UIXTextEntry.m; sourceTree = "<group>"; };
+		451ACC5C19D85AC00010BAF9 /* Todo.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Todo.txt; sourceTree = "<group>"; };
 		4521C5AB1360DCC300DD4856 /* DocumentFolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DocumentFolder.h; path = CoreData/DocumentFolder.h; sourceTree = "<group>"; };
 		4521C5AC1360DCC300DD4856 /* DocumentFolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DocumentFolder.m; path = CoreData/DocumentFolder.m; sourceTree = "<group>"; };
 		4521C5AD1360DCC300DD4856 /* ReaderDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReaderDocument.h; path = CoreData/ReaderDocument.h; sourceTree = "<group>"; };
@@ -131,6 +134,7 @@
 		452E1F91161203EE00192ED2 /* HISTORY.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HISTORY.md; sourceTree = "<group>"; };
 		452E1F92161203EE00192ED2 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.md; sourceTree = "<group>"; };
 		45449EB115153810009E47C2 /* AppIcon-144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "AppIcon-144.png"; path = "Graphics/AppIcon-144.png"; sourceTree = "<group>"; };
+		454719A519D8627B0059C4E5 /* AppIcon-180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "AppIcon-180.png"; path = "Graphics/AppIcon-180.png"; sourceTree = "<group>"; };
 		4552C17413413EB00000C190 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = Resources/Settings.bundle; sourceTree = "<group>"; };
 		45550E4D1612086C003F2FAA /* ReaderDocumentOutline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReaderDocumentOutline.h; path = Sources/ReaderDocumentOutline.h; sourceTree = "<group>"; };
 		45550E4E1612086C003F2FAA /* ReaderDocumentOutline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReaderDocumentOutline.m; path = Sources/ReaderDocumentOutline.m; sourceTree = "<group>"; };
@@ -288,6 +292,7 @@
 		29B97315FDCFA39411CA2CEA /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
+				451ACC5C19D85AC00010BAF9 /* Todo.txt */,
 				8D1107310486CEB800E47090 /* Viewer-Info.plist */,
 				32CA4F630368D1EE00C91783 /* Viewer-Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
@@ -457,6 +462,7 @@
 				45D9DE8C17FDF0B300581962 /* AppIcon-120.png */,
 				45449EB115153810009E47C2 /* AppIcon-144.png */,
 				45D9DE8D17FDF0B300581962 /* AppIcon-152.png */,
+				454719A519D8627B0059C4E5 /* AppIcon-180.png */,
 				45F624321444B09F006B6B11 /* AppIcon-PDF.png */,
 				452E1F8C161203A200192ED2 /* Default-568h@2x.png */,
 			);
@@ -508,7 +514,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0600;
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Viewer" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -542,6 +548,7 @@
 				45F624561444B09F006B6B11 /* AppIcon-PDF.png in Resources */,
 				45F624571444B09F006B6B11 /* Folder-Large.png in Resources */,
 				45F624581444B09F006B6B11 /* Folder-Large@2x.png in Resources */,
+				454719A619D8627B0059C4E5 /* AppIcon-180.png in Resources */,
 				45F624591444B09F006B6B11 /* Folder-Small.png in Resources */,
 				45F6245A1444B09F006B6B11 /* Folder-Small@2x.png in Resources */,
 				45F6245B1444B09F006B6B11 /* Icon-Check.png in Resources */,
@@ -551,6 +558,7 @@
 				45F6245F1444B09F006B6B11 /* Icon-Cross.png in Resources */,
 				45F624601444B09F006B6B11 /* Icon-Cross@2x.png in Resources */,
 				45F624611444B09F006B6B11 /* Icon-Edit.png in Resources */,
+				451ACC5D19D85AC00010BAF9 /* Todo.txt in Resources */,
 				45D9DE9017FDF0B300581962 /* AppIcon-152.png in Resources */,
 				45F624621444B09F006B6B11 /* Icon-Edit@2x.png in Resources */,
 				45F624631444B09F006B6B11 /* Icon-Folder.png in Resources */,
@@ -701,8 +709,10 @@
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_MODEL_TUNING = "";
 				GCC_PREPROCESSOR_DEFINITIONS = TESTING;
@@ -744,8 +754,10 @@
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_MODEL_TUNING = "";
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
@@ -772,8 +784,10 @@
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_MODEL_TUNING = "";
 				GCC_PREPROCESSOR_DEFINITIONS = NDEBUG;
