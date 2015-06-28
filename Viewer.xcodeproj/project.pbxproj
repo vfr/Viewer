@@ -52,6 +52,10 @@
 		458D3A32142A580F00F15953 /* ThumbsMainToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 458D3A1C142A580F00F15953 /* ThumbsMainToolbar.m */; };
 		458D3A33142A580F00F15953 /* ThumbsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 458D3A1E142A580F00F15953 /* ThumbsViewController.m */; };
 		458D3A34142A580F00F15953 /* UIXToolbarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 458D3A20142A580F00F15953 /* UIXToolbarView.m */; };
+		459050D81A3224F100304C94 /* Default-0750x1334.png in Resources */ = {isa = PBXBuildFile; fileRef = 459050D41A3224F100304C94 /* Default-0750x1334.png */; };
+		459050D91A3224F100304C94 /* Default-1242x2208.png in Resources */ = {isa = PBXBuildFile; fileRef = 459050D51A3224F100304C94 /* Default-1242x2208.png */; };
+		459050DA1A3224F100304C94 /* Default-1334x0750.png in Resources */ = {isa = PBXBuildFile; fileRef = 459050D61A3224F100304C94 /* Default-1334x0750.png */; };
+		459050DB1A3224F100304C94 /* Default-2208x1242.png in Resources */ = {isa = PBXBuildFile; fileRef = 459050D71A3224F100304C94 /* Default-2208x1242.png */; };
 		459A799C13413941009639D8 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459A799B13413941009639D8 /* ImageIO.framework */; };
 		459D1AD7144CD72600EF4614 /* help.css in Resources */ = {isa = PBXBuildFile; fileRef = 459D1AD9144CD72600EF4614 /* help.css */; };
 		45B9423613413C99005AE6DA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 45B9423513413C99005AE6DA /* Localizable.strings */; };
@@ -177,6 +181,10 @@
 		458D3A1E142A580F00F15953 /* ThumbsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ThumbsViewController.m; path = Sources/ThumbsViewController.m; sourceTree = "<group>"; };
 		458D3A1F142A580F00F15953 /* UIXToolbarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIXToolbarView.h; path = Sources/UIXToolbarView.h; sourceTree = "<group>"; };
 		458D3A20142A580F00F15953 /* UIXToolbarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIXToolbarView.m; path = Sources/UIXToolbarView.m; sourceTree = "<group>"; };
+		459050D41A3224F100304C94 /* Default-0750x1334.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-0750x1334.png"; path = "Graphics/Default-0750x1334.png"; sourceTree = "<group>"; };
+		459050D51A3224F100304C94 /* Default-1242x2208.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-1242x2208.png"; path = "Graphics/Default-1242x2208.png"; sourceTree = "<group>"; };
+		459050D61A3224F100304C94 /* Default-1334x0750.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-1334x0750.png"; path = "Graphics/Default-1334x0750.png"; sourceTree = "<group>"; };
+		459050D71A3224F100304C94 /* Default-2208x1242.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-2208x1242.png"; path = "Graphics/Default-2208x1242.png"; sourceTree = "<group>"; };
 		459A799B13413941009639D8 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		459D1AD8144CD72600EF4614 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.css; name = en; path = en.lproj/help.css; sourceTree = "<group>"; };
 		45B9423313413C7A005AE6DA /* en */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = en; path = Resources/en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -465,6 +473,10 @@
 				454719A519D8627B0059C4E5 /* AppIcon-180.png */,
 				45F624321444B09F006B6B11 /* AppIcon-PDF.png */,
 				452E1F8C161203A200192ED2 /* Default-568h@2x.png */,
+				459050D41A3224F100304C94 /* Default-0750x1334.png */,
+				459050D51A3224F100304C94 /* Default-1242x2208.png */,
+				459050D61A3224F100304C94 /* Default-1334x0750.png */,
+				459050D71A3224F100304C94 /* Default-2208x1242.png */,
 			);
 			name = App;
 			sourceTree = "<group>";
@@ -514,7 +526,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0600;
+				LastUpgradeCheck = 0630;
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Viewer" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -573,6 +585,7 @@
 				45F6246C1444B09F006B6B11 /* Reader-Button-N@2x.png in Resources */,
 				45F6246D1444B09F006B6B11 /* Reader-Email.png in Resources */,
 				45F6246E1444B09F006B6B11 /* Reader-Email@2x.png in Resources */,
+				459050DB1A3224F100304C94 /* Default-2208x1242.png in Resources */,
 				45F6246F1444B09F006B6B11 /* Reader-Mark-N.png in Resources */,
 				45F624701444B09F006B6B11 /* Reader-Mark-N@2x.png in Resources */,
 				45D9DE8E17FDF0B300581962 /* AppIcon-076.png in Resources */,
@@ -583,8 +596,11 @@
 				45D9DE8F17FDF0B300581962 /* AppIcon-120.png in Resources */,
 				45F624751444B09F006B6B11 /* Reader-Thumbs.png in Resources */,
 				45F624761444B09F006B6B11 /* Reader-Thumbs@2x.png in Resources */,
+				459050D91A3224F100304C94 /* Default-1242x2208.png in Resources */,
 				45E2B4EC144CC68E00B497D0 /* help.html in Resources */,
+				459050DA1A3224F100304C94 /* Default-1334x0750.png in Resources */,
 				459D1AD7144CD72600EF4614 /* help.css in Resources */,
+				459050D81A3224F100304C94 /* Default-0750x1334.png in Resources */,
 				45449EB215153810009E47C2 /* AppIcon-144.png in Resources */,
 				452E1F8D161203A200192ED2 /* Default-568h@2x.png in Resources */,
 				452E1F90161203E600192ED2 /* README.md in Resources */,
@@ -715,6 +731,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_MODEL_TUNING = "";
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = TESTING;
 				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -760,6 +777,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_MODEL_TUNING = "";
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
 				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -790,6 +808,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_MODEL_TUNING = "";
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = NDEBUG;
 				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;

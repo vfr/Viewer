@@ -1,6 +1,6 @@
 //
 //	FoldersViewController.m
-//	Viewer v1.2.0
+//	Viewer v1.2.1
 //
 //	Created by Julius Oklamcak on 2012-09-01.
 //	Copyright © 2011-2014 Julius Oklamcak. All rights reserved.
@@ -177,12 +177,14 @@
 	theTitleLabel.textAlignment = NSTextAlignmentCenter;
 	theTitleLabel.font = [UIFont systemFontOfSize:19.0f];
 	theTitleLabel.textColor = [UIColor colorWithWhite:0.0f alpha:1.0f];
-	theTitleLabel.shadowColor = [UIColor colorWithWhite:0.65f alpha:1.0f];
 	theTitleLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 	theTitleLabel.backgroundColor = [UIColor clearColor];
+#if (READER_FLAT_UI == FALSE) // Option
+	theTitleLabel.shadowColor = [UIColor colorWithWhite:0.65f alpha:1.0f];
 	theTitleLabel.shadowOffset = CGSizeMake(0.0f, 1.0f);
+#endif // end of READER_FLAT_UI Option
 	theTitleLabel.text = NSLocalizedString(@"Folders", @"title");
-	[theToolbar addSubview:theTitleLabel]; // Add title to toolbar
+	[theToolbar addSubview:theTitleLabel];
 
 	CGRect tableRect = viewRect; tableRect.origin.y += TOOLBAR_HEIGHT; tableRect.size.height -= TOOLBAR_HEIGHT;
 	theTableView = [[UITableView alloc] initWithFrame:tableRect]; // UITableView

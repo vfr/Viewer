@@ -1,6 +1,6 @@
 //
 //	LibraryDirectoryView.m
-//	Viewer v1.2.0
+//	Viewer v1.2.1
 //
 //	Created by Julius Oklamcak on 2012-09-01.
 //	Copyright © 2011-2014 Julius Oklamcak. All rights reserved.
@@ -229,17 +229,17 @@
 		theTitleLabel.textAlignment = NSTextAlignmentCenter;
 		theTitleLabel.font = [UIFont systemFontOfSize:19.0f];
 		theTitleLabel.textColor = [UIColor colorWithWhite:0.0f alpha:1.0f];
-		theTitleLabel.shadowColor = [UIColor colorWithWhite:0.65f alpha:1.0f];
 		theTitleLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 		theTitleLabel.baselineAdjustment = UIBaselineAdjustmentAlignCenters;
 		theTitleLabel.backgroundColor = [UIColor clearColor];
-		theTitleLabel.shadowOffset = CGSizeMake(0.0f, 1.0f);
 		theTitleLabel.adjustsFontSizeToFitWidth = YES;
 		theTitleLabel.minimumScaleFactor = 0.75f;
-
+#if (READER_FLAT_UI == FALSE) // Option
+		theTitleLabel.shadowColor = [UIColor colorWithWhite:0.65f alpha:1.0f];
+		theTitleLabel.shadowOffset = CGSizeMake(0.0f, 1.0f);
+#endif // end of READER_FLAT_UI Option
 		theTitleLabel.text = NSLocalizedString(@"Library", @"text");
-
-		[theToolbar addSubview:theTitleLabel]; // Add to toolbar
+		[theToolbar addSubview:theTitleLabel];
 
 		[self addSubview:theToolbar]; // Add toolbar to container view
 

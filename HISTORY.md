@@ -1,6 +1,12 @@
 
 ## History
 
+2015-06-28: Version 1.2.1
+
+	- Pulled in PDF Reader Core for iOS v2.8.6 code.
+	- iPhone 6 and 6 Plus support - launch images and thumbnails.
+	- Added support for compile time READER_FLAT_UI option.
+
 2014-09-28: Version 1.2.0
 
 	- Pulled in PDF Reader Core for iOS v2.8.3 code.
