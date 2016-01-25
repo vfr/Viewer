@@ -1,6 +1,12 @@
 
 ## History
 
+2016-01-25: Version 1.2.2
+
+	- Added iOS 9 and iPad Pro support.
+	- iPhone 6 Plus and iPhone 6S Plus @3x graphics.
+	- Pulled in PDF Reader Core for iOS v2.8.7 code.
+
 2015-06-28: Version 1.2.1
 
 	- Pulled in PDF Reader Core for iOS v2.8.6 code.

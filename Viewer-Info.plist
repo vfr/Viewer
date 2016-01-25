@@ -9,6 +9,7 @@
 	<key>CFBundleIconFiles</key>
 	<array>
 		<string>AppIcon-180.png</string>
+		<string>AppIcon-167.png</string>
 		<string>AppIcon-152.png</string>
 		<string>AppIcon-144.png</string>
 		<string>AppIcon-120.png</string>
@@ -30,12 +31,14 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1.2.1</string>
+	<string>1.2.2</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.2.1</string>
+	<string>1.2.2</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIPrerenderedIcon</key>
+	<true/>
+	<key>UIRequiresFullScreen</key>
 	<true/>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
@@ -65,6 +68,8 @@
 			</array>
 		</dict>
 	</array>
+	<key>UILaunchStoryboardName</key>
+	<string>Viewer-App</string>
 	<key>UILaunchImages</key>
 	<array>
 		<dict>
@@ -76,46 +81,6 @@
 			<string>Portrait</string>
 			<key>UILaunchImageSize</key>
 			<string>{320, 568}</string>
-		</dict>
-		<dict>
-			<key>UILaunchImageName</key>
-			<string>Default-0750x1334</string>
-			<key>UILaunchImageMinimumOSVersion</key>
-			<string>8.0</string>
-			<key>UILaunchImageOrientation</key>
-			<string>Portrait</string>
-			<key>UILaunchImageSize</key>
-			<string>{375, 667}</string>
-		</dict>
-		<dict>
-			<key>UILaunchImageName</key>
-			<string>Default-1334x0750</string>
-			<key>UILaunchImageMinimumOSVersion</key>
-			<string>8.0</string>
-			<key>UILaunchImageOrientation</key>
-			<string>Landscape</string>
-			<key>UILaunchImageSize</key>
-			<string>{375, 667}</string>
-		</dict>
-		<dict>
-			<key>UILaunchImageName</key>
-			<string>Default-1242x2208</string>
-			<key>UILaunchImageMinimumOSVersion</key>
-			<string>8.0</string>
-			<key>UILaunchImageOrientation</key>
-			<string>Portrait</string>
-			<key>UILaunchImageSize</key>
-			<string>{414, 736}</string>
-		</dict>
-		<dict>
-			<key>UILaunchImageName</key>
-			<string>Default-2208x1242</string>
-			<key>UILaunchImageMinimumOSVersion</key>
-			<string>8.0</string>
-			<key>UILaunchImageOrientation</key>
-			<string>Landscape</string>
-			<key>UILaunchImageSize</key>
-			<string>{414, 736}</string>
 		</dict>
 	</array>
 </dict>

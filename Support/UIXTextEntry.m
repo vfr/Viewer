@@ -125,8 +125,8 @@
 
 		theToolbar = [[UIToolbar alloc] initWithFrame:toolbarRect];
 		theToolbar.autoresizingMask = UIViewAutoresizingNone;
-		theToolbar.barStyle = UIBarStyleBlack;
-		theToolbar.translucent = YES;
+		theToolbar.barStyle = UIBarStyleDefault;
+		//theToolbar.translucent = YES;
 
 		UIBarButtonItem *doneButton =	[[UIBarButtonItem alloc]
 										initWithTitle:NSLocalizedString(@"Done", @"button")

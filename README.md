@@ -24,8 +24,8 @@ code from the https://github.com/vfr/Reader repository on GitHub.
 
 ### Notes
 
-Current development and testing of the PDF Viewer App is under Xcode 6.0,
-LLVM 6.0 and iOS 8. The code uses ARC memory management and should work
+Current development and testing of the PDF Viewer App is under Xcode 7.2,
+LLVM 7.0 and iOS 9.2. The code uses ARC memory management and should work
 under iOS 6 as well.
 
 Please see https://github.com/vfr/Reader/blob/master/README.md for notes
