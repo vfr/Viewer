@@ -1,8 +1,12 @@
 
-## PDF Viewer App for iOS
+### PDF Viewer App for iOS
 
-This project is now deprecated - it will no longer be maintained and will only be kept around for a short time.
-Please see the [UXReader PDF Framework for iOS](https://github.com/vfr/UXReader-iOS) project for its replacement.
+---
+
+*This project is now deprecated - it will no longer be maintained and will only be kept around for a short time.
+Please see the [UXReader PDF Framework for iOS](https://github.com/vfr/UXReader-iOS) project for its replacement.*
+
+---
 
 ### Introduction
 
